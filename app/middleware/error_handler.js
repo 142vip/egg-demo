@@ -33,7 +33,7 @@ module.exports = () => {
     // // 未出现异常
     // let is_error = 0;
     try {
-      ctx.logger.info({ Query: ctx.query, Body: ctx.request.body, Params: ctx.params, headers: ctx.headers });
+      ctx.logger.info(`${JSON.stringify({ Query: ctx.query, Body: ctx.request.body, Params: ctx.params })}`);
       await next();
 
       // 获取响应的结果

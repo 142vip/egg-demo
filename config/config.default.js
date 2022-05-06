@@ -16,13 +16,13 @@ module.exports = appInfo => {
   // 系统配置 例如 mysql redis 都可以在这里配置
   const config = {};
   // 用户自定义配置，例如服务基础配置
-  const userConfig = {}
+  const userConfig = {};
 
   // cookie使用时候的key
   config.keys = appInfo.name + '_1600702277549_7136';
 
   // 中间件配置
-  config.middleware = [];
+  config.middleware = [ 'errorHandler' ];
   config.responseBodyMsg = {
     200: '请求成功',
     400: '',
@@ -33,20 +33,10 @@ module.exports = appInfo => {
     599: '返回为空',
   };
 
-  // add your middleware config here
-  config.middleware = [ 'errorHandler' ];
-
   // 定义项目启动端口
-  config.cluster={
-    listen:{
-      port: 8848,
-      path:'',
-      hostname:'127.0.0.1'
-    }
-  }
   config.cluster = {
     listen: {
-      port: 3459,
+      port: 8848,
       path: '',
       hostname: '127.0.0.1',
     },
