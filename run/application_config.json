@@ -5,6 +5,7 @@
       "key": "EGG_SESS",
       "httpOnly": true,
       "encrypt": true,
+      "logValue": true,
       "overwrite": true,
       "signed": true,
       "autoCommit": true,
@@ -17,17 +18,28 @@
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
       "csrf": {
-        "enable": true,
+        "enable": false,
         "type": "ctoken",
-        "ignoreJSON": false,
+        "ignoreJSON": true,
         "useSession": false,
         "cookieName": "csrfToken",
         "sessionName": "csrfToken",
         "headerName": "x-csrf-token",
         "bodyName": "_csrf",
         "queryName": "_csrf",
-        "refererWhiteList": [],
-        "matching": "<Function anonymous>"
+        "supportedRequests": [
+          {
+            "path": {},
+            "methods": [
+              "POST",
+              "PATCH",
+              "DELETE",
+              "PUT",
+              "CONNECT"
+            ]
+          }
+        ],
+        "refererWhiteList": []
       },
       "xframe": {
         "enable": true,
@@ -70,6 +82,7 @@
       },
       "ssrf": {
         "ipBlackList": null,
+        "ipExceptionList": null,
         "checkAddress": null
       },
       "_protocolWhiteListSet": "<Set>"
@@ -88,25 +101,26 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-schedule@3.6.5@egg-schedule/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/locales",
-        "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/locales"
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-session/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-security/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-jsonp/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-onerror/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-i18n/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-watcher/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-schedule/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-multipart/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-development/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-logrotator/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-static/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-view/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg-validate/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/locales",
+        "/Users/edy/Desktop/github/egg-demo/config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -117,8 +131,8 @@
     "watcher": {
       "type": "development",
       "eventSources": {
-        "default": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/lib/event-sources/default",
-        "development": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/lib/event-sources/development"
+        "default": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "customLogger": {
@@ -141,9 +155,11 @@
       "files": 10,
       "fileExtensions": [],
       "whitelist": null,
-      "tmpdir": "/var/folders/mv/3gg0528n34x8yk1qxpw5zyym0l1qqg/T/egg-multipart-tmp/egg-demo",
+      "allowArrayField": false,
+      "tmpdir": "/var/folders/g9/6dhlhtrd0bzf1_rrmsvl9p8w0000gn/T/egg-multipart-tmp/egg-demo",
       "cleanSchedule": {
-        "cron": "0 30 4 * * *"
+        "cron": "0 30 4 * * *",
+        "disable": false
       }
     },
     "development": {
@@ -165,18 +181,21 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/app/public",
+      "dir": "/Users/edy/Desktop/github/egg-demo/app/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
       "maxFiles": 1000
     },
     "view": {
-      "root": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/app/view",
+      "root": "/Users/edy/Desktop/github/egg-demo/app/view",
       "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
       "mapping": {}
+    },
+    "validate": {
+      "convert": true
     },
     "env": "local",
     "name": "egg-demo",
@@ -198,7 +217,8 @@
       },
       "dependencies": {
         "egg": "^2.15.1",
-        "egg-scripts": "^2.11.0"
+        "egg-scripts": "^2.11.0",
+        "egg-validate": "^2.0.2"
       },
       "devDependencies": {
         "autod": "^3.0.1",
@@ -206,8 +226,8 @@
         "egg-bin": "^4.11.0",
         "egg-ci": "^1.11.0",
         "egg-mock": "^3.21.0",
-        "eslint": "^5.13.0",
-        "eslint-config-egg": "^7.1.0"
+        "eslint": "^5.16.0",
+        "eslint-config-egg": "^7.5.1"
       },
       "engines": {
         "node": ">=10.0.0"
@@ -234,9 +254,9 @@
       "author": "[Github&公众号]:Rong姐姐好可爱",
       "license": "MIT"
     },
-    "baseDir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo",
-    "HOME": "/Users/mmdapl",
-    "rundir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/run",
+    "baseDir": "/Users/edy/Desktop/github/egg-demo",
+    "HOME": "/Users/edy",
+    "rundir": "/Users/edy/Desktop/github/egg-demo/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -251,7 +271,8 @@
       "pageUrl": ""
     },
     "siteFile": {
-      "/favicon.ico": "<Buffer len: 6463>"
+      "/favicon.ico": "<Buffer len: 6463>",
+      "cacheControl": "public, max-age=2592000"
     },
     "bodyParser": {
       "enable": true,
@@ -268,7 +289,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/logs/egg-demo",
+      "dir": "/Users/edy/Desktop/github/egg-demo/logs/egg-demo",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
@@ -284,6 +305,7 @@
         "consoleLevel": "WARN"
       },
       "allowDebugAtProd": false,
+      "enablePerformanceTimer": false,
       "type": "application"
     },
     "httpclient": {
@@ -336,7 +358,13 @@
       "responseTimeout": 60000
     },
     "onClientError": null,
-    "middleware": [],
+    "middleware": [
+      "errorHandler"
+    ],
+    "cors": {
+      "origin": "*",
+      "allowMethods": "GET,HEAD,PUT,POST,DELETE,PATCH"
+    },
     "coreMiddlewares": "~config~coreMiddleware",
     "appMiddlewares": "~config~middleware",
     "appMiddleware": "~config~middleware",
@@ -354,43 +382,6 @@
     }
   },
   "plugins": {
-    "session": {
-      "enable": true,
-      "package": "egg-session",
-      "name": "session",
-      "dependencies": [],
-      "optionalDependencies": [],
-      "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session",
-      "version": "3.2.0"
-    },
-    "security": {
-      "enable": true,
-      "package": "egg-security",
-      "name": "security",
-      "dependencies": [],
-      "optionalDependencies": [
-        "session"
-      ],
-      "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security",
-      "version": "2.8.0"
-    },
-    "jsonp": {
-      "enable": true,
-      "package": "egg-jsonp",
-      "name": "jsonp",
-      "dependencies": [],
-      "optionalDependencies": [
-        "security"
-      ],
-      "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-jsonp@2.0.0@egg-jsonp",
-      "version": "2.0.0"
-    },
     "onerror": {
       "enable": true,
       "package": "egg-onerror",
@@ -400,9 +391,20 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-onerror",
       "version": "2.1.0"
+    },
+    "session": {
+      "enable": true,
+      "package": "egg-session",
+      "name": "session",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-session",
+      "version": "3.3.0"
     },
     "i18n": {
       "enable": true,
@@ -411,8 +413,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -422,20 +424,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-watcher",
       "version": "3.1.1"
-    },
-    "schedule": {
-      "enable": true,
-      "package": "egg-schedule",
-      "name": "schedule",
-      "dependencies": [],
-      "optionalDependencies": [],
-      "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-schedule@3.6.5@egg-schedule",
-      "version": "3.6.5"
     },
     "multipart": {
       "enable": true,
@@ -446,9 +437,22 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart",
-      "version": "2.10.3"
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-multipart",
+      "version": "2.13.1"
+    },
+    "security": {
+      "enable": true,
+      "package": "egg-security",
+      "name": "security",
+      "dependencies": [],
+      "optionalDependencies": [
+        "session"
+      ],
+      "env": [],
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-security",
+      "version": "2.10.1"
     },
     "development": {
       "enable": true,
@@ -461,8 +465,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-development",
       "version": "2.7.0"
     },
     "logrotator": {
@@ -474,9 +478,20 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-logrotator",
       "version": "3.1.0"
+    },
+    "schedule": {
+      "enable": true,
+      "package": "egg-schedule",
+      "name": "schedule",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-schedule",
+      "version": "3.6.6"
     },
     "static": {
       "enable": true,
@@ -485,9 +500,22 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static",
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-static",
       "version": "2.2.0"
+    },
+    "jsonp": {
+      "enable": true,
+      "package": "egg-jsonp",
+      "name": "jsonp",
+      "dependencies": [],
+      "optionalDependencies": [
+        "security"
+      ],
+      "env": [],
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-jsonp",
+      "version": "2.0.0"
     },
     "view": {
       "enable": true,
@@ -496,9 +524,74 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/plugin.js",
-      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view",
-      "version": "2.1.2"
+      "from": "/Users/edy/Desktop/github/egg-demo/node_modules/egg/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-view",
+      "version": "2.1.3"
+    },
+    "validate": {
+      "enable": true,
+      "package": "egg-validate",
+      "name": "validate",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/edy/Desktop/github/egg-demo/config/plugin.js",
+      "path": "/Users/edy/Desktop/github/egg-demo/node_modules/egg-validate",
+      "version": "2.0.2"
     }
+  },
+  "appInfo": {
+    "name": "egg-demo",
+    "baseDir": "/Users/edy/Desktop/github/egg-demo",
+    "env": "local",
+    "HOME": "/Users/edy",
+    "pkg": {
+      "name": "egg-demo",
+      "version": "1.0.0",
+      "description": "egg框架的基础项目结构代码示例",
+      "private": true,
+      "egg": {
+        "declarations": true
+      },
+      "dependencies": {
+        "egg": "^2.15.1",
+        "egg-scripts": "^2.11.0",
+        "egg-validate": "^2.0.2"
+      },
+      "devDependencies": {
+        "autod": "^3.0.1",
+        "autod-egg": "^1.1.0",
+        "egg-bin": "^4.11.0",
+        "egg-ci": "^1.11.0",
+        "egg-mock": "^3.21.0",
+        "eslint": "^5.16.0",
+        "eslint-config-egg": "^7.5.1"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "scripts": {
+        "start": "egg-scripts start --daemon --title=egg-server-egg-demo",
+        "stop": "egg-scripts stop --title=egg-server-egg-demo",
+        "dev": "egg-bin dev",
+        "debug": "egg-bin debug",
+        "test": "npm run lint -- --fix && npm run test-local",
+        "test-local": "egg-bin test",
+        "cov": "egg-bin cov",
+        "lint": "eslint .",
+        "ci": "npm run lint && npm run cov",
+        "autod": "autod"
+      },
+      "ci": {
+        "version": "10"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "author": "[Github&公众号]:Rong姐姐好可爱",
+      "license": "MIT"
+    },
+    "root": "/Users/edy/Desktop/github/egg-demo"
   }
 }
