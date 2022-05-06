@@ -1,0 +1,6 @@
+/.idea/
+/.github/
+/logs/
+/jsconfig.json
+node_module
+/typings/

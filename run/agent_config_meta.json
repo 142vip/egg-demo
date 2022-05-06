@@ -1,0 +1,294 @@
+{
+  "keys": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/config.default.js",
+  "middleware": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "port": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/config.default.js",
+      "path": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/config.default.js",
+      "hostname": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/config/config.default.js"
+    }
+  },
+  "session": {
+    "maxAge": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session/config/config.default.js",
+    "key": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session/config/config.default.js",
+    "httpOnly": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session/config/config.default.js",
+    "encrypt": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-session@3.2.0@egg-session/config/config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "type": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "useSession": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "cookieName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "sessionName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "headerName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "bodyName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "queryName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "refererWhiteList": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "xframe": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "value": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.local.js",
+      "maxAge": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "value": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "value": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "policy": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js",
+      "checkAddress": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-security@2.8.0@egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "callback": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "csrf": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "templatePath": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "dirs": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "queryField": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieField": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js",
+      "development": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-schedule@3.6.5@egg-schedule/config/config.default.js",
+      "file": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-schedule@3.6.5@egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-schedule@3.6.5@egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "autoFields": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "fields": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "fileSize": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "files": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "whitelist": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-multipart@2.10.3@egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "fastReady": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "overrideDefault": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "overrideIgnore": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "dir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "dynamic": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "preload": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "buffer": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "maxFiles": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/config.default.js",
+    "cache": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/config.local.js",
+    "defaultExtension": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/config.default.js",
+    "mapping": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg-view@2.1.2@egg-view/config/config.default.js"
+  },
+  "env": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "name": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "cookies": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "proxy": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "maxIpsCount": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "maxProxyCount": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "protocolHeaders": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "ipHeaders": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "hostHeaders": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "version": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "description": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "private": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "egg": {
+      "declarations": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "dependencies": {
+      "egg": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "egg-scripts": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "autod-egg": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "egg-bin": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "egg-ci": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "egg-mock": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "eslint": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "eslint-config-egg": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "stop": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "dev": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "debug": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "test": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "test-local": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "cov": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "lint": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "ci": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "autod": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "url": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "author": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "license": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "baseDir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "HOME": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "rundir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "notFound": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "sitefile": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "middlewares": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "httpClient": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "encoding": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "formLimit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "jsonLimit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "textLimit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "strict": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "depth": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "parameterLimit": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "onerror": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "encoding": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "env": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "level": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "consoleLevel": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "outputJSON": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "buffer": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "appLogName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "coreLogName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "agentLogName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "errorLogName": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "maxSockets": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "maxSockets": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "logging": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "workerStartTimeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "serverTimeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+  "clusterClient": {
+    "maxWaitTime": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js",
+    "responseTimeout": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+  },
+  "onClientError": "/Users/mmdapl/Desktop/github/node-code-example/egg-demo/node_modules/_egg@2.28.0@egg/config/config.default.js"
+}
