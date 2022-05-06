@@ -1,0 +1,56 @@
+##
+## 支持服务：
+##    - MySQL   端口映射 4000
+##    - Redis   端口映射 3000
+##    - MongoDB 端口映射 5000
+##
+version: '2'
+services:
+  ## mysql服务
+  mysql_dev:
+    image: mysql:5.7
+    container_name: mysql_dev
+#    volumes:
+#      - service_env/mysql/log:/var/log/mysql
+#      - service_env/mysql/data:/var/lib/mysql
+#      - service_env/mysql/conf.d:/etc/mysql/conf.d
+    ports:
+      - "4000:3306" #暴露mysql的端口
+      # - "33060:33060"
+    ulimits:
+      nproc: 65535
+    hostname: mysql_dev
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+  ## mongo数据库
+  mongo_dev:
+    image: mongo
+    container_name: mongo_dev
+    hostname: mongo_dev
+    restart: always
+    ports:
+      - "5000:27017"
+    environment:
+      TZ: Asia/Shanghai
+      MONGO_INITDB_DATABASE: mongo_dev_test
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - service_env/mongo:/data/db
+    command: mongod
+  # redis缓存数据库
+  redis_dev:
+    image: redis:latest
+    container_name: redis_dev
+    # restart: always
+    ports:
+      - 3000:6379
+    hostname: redis_dev
+#    volumes:
+#      - service_env/redis/redis.conf:/usr/local/etc/redis/redis.conf
+#      - service_env/redis/data:/data
+    command:
+      /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf "
