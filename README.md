@@ -4,25 +4,17 @@ egg框架的基础项目结构代码示例
 
 ## QuickStart
 
+<!-- add docs here for user -->
 
-
-### TODO
-
-- [ ] 目录文件说明和基础使用
-- [ ] 支持MySQL使用
-- [ ] 支持Redis使用
-- [ ] 集成Docker部署
-- [ ] 一键配置基础开发环境 启动MySQL、Redis缓存服务
-
+see [egg docs][egg] for more detail.
 
 ### Development
 
 ```bash
 $ npm i
 $ npm run dev
-$ open http://localhost:8848/
+$ open http://localhost:7001/
 ```
-
 
 ### Deploy
 
