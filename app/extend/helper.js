@@ -10,12 +10,15 @@
 
 'use strict';
 
+/**
+ * 扩展ctx.helper对象，此处定义的方法、变量， 可以通过ctx.helper.xx使用
+ * 参考：https://www.eggjs.org/zh-CN/basics/extend
+ */
 
-exports.returnFormat = (code = 200, msg = '请求成功', result = {
 
-}) => {
-  return { code, msg, result }
-}
+exports.returnFormat = (code = 200, message = '请求成功', result = {}) => {
+  return { code, message, result };
+};
 
 
 // module.exports = {
