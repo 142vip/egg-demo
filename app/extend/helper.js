@@ -15,8 +15,9 @@
  * 参考：https://www.eggjs.org/zh-CN/basics/extend
  */
 
-exports.returnFormat = (code = 200, msg = '请求成功', result = {}) => {
-  return { code, msg, result };
+
+exports.returnFormat = (code = 200, message = '请求成功', result = {}) => {
+  return { code, message, result };
 };
 
 

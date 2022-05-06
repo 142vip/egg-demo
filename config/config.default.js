@@ -22,6 +22,16 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1600702277549_7136';
 
+  config.responseBodyMsg = {
+    200: '请求成功',
+    400: '',
+    401: '未授权',
+    404: '资源不存在',
+    422: '参数错误',
+    500: '内部服务异常',
+    599: '返回为空',
+  };
+
   // add your middleware config here
   config.middleware = [ 'errorHandler' ];
 
