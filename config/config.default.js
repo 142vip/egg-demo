@@ -41,6 +41,62 @@ module.exports = appInfo => {
       hostname: '127.0.0.1',
     },
   };
+  // 配置数据库 【备用】
+  config.sequelizePlus = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'egg-demo',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: '123456',
+    // delegate: 'myModel', // load all models to `app[delegate]` and `ctx[delegate]`, default to `model`
+    // baseDir: 'my_model', // load all files in `app/${baseDir}` as models, default to `model`
+    // exclude: 'index.js', // ignore `app/${baseDir}/index.js` when load models, support glob and array
+    // more sequelize options
+    options: {
+      timezone: 'Asia/Shanghai',
+      // 连接池，设置最大连接数
+      pool: {
+        maxConnections: 5,
+      },
+    },
+  };
+  // 官方支持的ORM
+  config.sequelize = {
+    dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    database: 'egg-demo',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: '123456',
+    // delegate: 'myModel', // load all models to `app[delegate]` and `ctx[delegate]`, default to `model`
+    // baseDir: 'my_model', // load all files in `app/${baseDir}` as models, default to `model`
+    // exclude: 'index.js', // ignore `app/${baseDir}/index.js` when load models, support glob and array
+    // more sequelize options
+    options: {
+      timezone: 'Asia/Shanghai',
+      // 连接池，设置最大连接数
+      pool: {
+        maxConnections: 10,
+      },
+    },
+  };
+  // redis配置
+  config.redis = {
+    client: { // instanceName. See below
+      port: 6379, // Redis port
+      host: '127.0.0.1', // Redis host
+      password: 'auth',
+      db: 10,
+    },
+  };
+
+  // 静态资源渲染
+  config.view = {
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
   // 配置参数校验[convertType自动规则转换]
   config.validate = {
     convert: true, // 对参数可以使用convertType规则进行类型转换

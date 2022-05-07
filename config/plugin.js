@@ -20,4 +20,33 @@ module.exports = {
     enable: true,
     package: 'egg-validate',
   },
+  // egg-sequelize 备用
+  // sequelizePlus: {
+  //   enable: true,
+  //   package: 'egg-sequelize-plus',
+  // },
+  // egg-sequelize
+  sequelize: {
+    enable: true,
+    package: 'egg-sequelize',
+  },
+  // 配置跨域
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
+  // redis配置
+  redis: {
+    enable: true,
+    package: 'egg-redis',
+  },
+  // 授权服务
+  // oAuth2Server: {
+  //   enable: true,
+  //   package: 'egg-oauth2-server',
+  // },
+  ejs: {
+    enable: true,
+    package: 'egg-view-ejs',
+  },
 };

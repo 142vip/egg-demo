@@ -1,7 +1,6 @@
-/.idea/
-/.github/
-/logs/
-/jsconfig.json
+.idea
+.github
+logs
 node_module
-/typings/
-/run/
+typings
+
