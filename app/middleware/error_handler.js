@@ -38,6 +38,7 @@ module.exports = () => {
 
       // 获取响应的结果
       const response = ctx.body;
+      console.log(response);
       // 资源找不到
       if (response === undefined) {
         ctx.throw('返回为空', 599);

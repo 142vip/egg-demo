@@ -49,4 +49,8 @@ module.exports = {
     enable: true,
     package: 'egg-view-ejs',
   },
+  swaggerdoc: {
+    enable: true, // 是否启用
+    package: 'egg-swagger-doc', // 指定包名称
+  },
 };
