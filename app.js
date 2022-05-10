@@ -12,6 +12,9 @@ const initRedis = require('./app/cache/index');
 class AppBootHook {
   constructor(app) {
     this.app = app;
+    this.logger = app.logger;
+    this.config = app.config;
+    this.startTime = Date.now();
   }
 
   configWillLoad() {
@@ -46,7 +49,9 @@ class AppBootHook {
 
   async didReady() {
     // 应用已经启动完毕
-
+    const { logger, config, startTime } = this;
+    const { hostname, port } = config.cluster.listen;
+    logger.info(`[egg-swagger-doc](${Date.now() - startTime}ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html`);
   }
 
   async serverDidReady() {

@@ -42,3 +42,7 @@ http-errors deprecated non-first-argument status code; replace with createError(
 http-errors deprecated non-error status code; use only 4xx or 5xx status codes node_modules/koa/lib/context.js:97:11
 
 ```
+
+
+- 全局异常处理，统一捕获异常、错误
+- 响应处理，用来封装controller返回的结果

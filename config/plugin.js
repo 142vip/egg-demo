@@ -46,7 +46,11 @@ module.exports = {
   //   package: 'egg-oauth2-server',
   // },
   ejs: {
-    enable: true,
+    enable: false,
     package: 'egg-view-ejs',
+  },
+  swaggerdoc: {
+    enable: true, // 是否启用
+    package: 'egg-swagger-doc', // 指定包名称
   },
 };
