@@ -46,7 +46,7 @@ module.exports = {
   //   package: 'egg-oauth2-server',
   // },
   ejs: {
-    enable: true,
+    enable: false,
     package: 'egg-view-ejs',
   },
   swaggerdoc: {

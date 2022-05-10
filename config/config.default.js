@@ -19,20 +19,37 @@ module.exports = appInfo => {
   const userConfig = {};
 
   // cookie使用时候的key
-  config.keys = appInfo.name + '_1600702277549_7136';
+  config.keys = appInfo.name + '_520_19980115';
 
   // 中间件配置
-  // config.middleware = [ 'errorHandler' ];
-  // 配置过滤器忽略
-  // config.errorHandler = {
-  //   ignore: [
-  //     // 验证码
-  //     '/api/v1/randomVerifyCode',
-  //     '/api/v1/oauth2/authorize',
-  //     '/api/v1/oauth2/token',
-  //     '/swagger-ui.html',
-  //   ],
-  // };
+  config.middleware = [ 'errorHandler', 'responseHandler' ];
+  // 全局统一错误处理
+  config.errorHandler = {
+    ignore: [
+      // 验证码
+      '/api/v1/randomVerifyCode',
+      '/api/v1/oauth2/authorize',
+      '/api/v1/oauth2/token',
+      '/swagger*', // swagger相关
+      '/favicon*',
+      '/public',
+    ],
+  };
+
+  // 正常情况下，接口返回数据封装
+  config.responseHandler = {
+    ignore: [
+      '/swagger*', // swagger相关
+      '/favicon*',
+      '/public',
+    ],
+  };
+
+  // 配置静态资源目录
+  config.static = {
+    prefix: '/test',
+  };
+
   config.responseBodyMsg = {
     200: '请求成功',
     400: '',
