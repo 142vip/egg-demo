@@ -51,7 +51,7 @@ class AppBootHook {
     // 应用已经启动完毕
     const { logger, config, startTime } = this;
     const { hostname, port } = config.cluster.listen;
-    logger.info(`[egg-swagger-doc](${Date.now() - startTime}ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html`);
+    logger.info(`[egg-swagger-doc](${Date.now() - startTime}ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html JSON接口访问：http://${hostname}:${port}/swagger-doc 方便导出`);
   }
 
   async serverDidReady() {
