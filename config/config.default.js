@@ -122,17 +122,17 @@ module.exports = appInfo => {
   config.swaggerdoc = {
     dirScanner: './app/controller', // 配置自动扫描的控制器路径
     apiInfo: {
-      title: '接口文档', // 接口文档的标题
+      title: 'egg-demo接口文档', // 接口文档的标题
       description: 'swagger 测试接口文档', // 接口文档描述
-      version: '1.0.0', // 接口文档版本
-      termsOfService: 'http://swagger.io/terms/', // 服务条件
-      contact: {
-        email: 'sunjianfeng@csxiaoyao.com', // 联系方式
-      },
-      license: {
-        name: 'Apache 2.0',
-        url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
-      },
+      version: 'Beta0.0.1', // 接口文档版本
+      // termsOfService: 'http://baidu.com', // 服务条件
+      // contact: {
+      //   email: 'sunjianfeng@csxiaoyao.com', // 联系方式
+      // },
+      // license: {
+      //   name: 'Apache 2.0',
+      //   url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+      // },
     },
     basePath: '/', // 配置基础路径
     schemes: [ 'http', 'https' ], // 配置支持的协议

@@ -27,7 +27,7 @@ class UserController extends Controller {
   // 更新
   async update() {
     const { ctx } = this;
-    ctx.throw();
+    ctx.throw('xxx', 400);
     // throw new HttpException('当前子用户名已存在', 200);
     // throw new Error(111);
   }

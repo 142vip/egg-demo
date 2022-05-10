@@ -6,7 +6,7 @@
 
 module.exports = () => {
   return async function errorHandler(ctx, next) {
-    const { responseBodyMsg } = ctx.config;
+    const { responseBodyMsg } = ctx.app.config;
     try {
       await next();
     } catch (err) {

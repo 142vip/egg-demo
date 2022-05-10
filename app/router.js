@@ -13,11 +13,24 @@
 const userRouter = require('./routers/user');
 
 module.exports = app => {
-  const { router, controller } = app;
+  const { router, controller, config } = app;
 
   // 模块路由
   userRouter(app);
 
+
   // 自定义路由
   router.get('/', controller.home.index);
+
+  // 添加全局路由前缀 [可选，可用来更好的管理路由,但要注意swagger等静态资源的访问情况，可以答应router查看]
+
+  if (config.env === 'prod') {
+    router.prefix('/api/egg-demo');
+    // console.log(router);
+    // console.log(router.routes());
+  }
+
+
+  // config.env 获取运行是指定的环境 --env=xx 可以用来判断； 正式环境就不需要使用文档，一般只提供/api/项目名/版本号
+  // console.log(config.env);
 };
