@@ -2,32 +2,27 @@
 
 egg框架的基础项目结构代码示例
 
-## QuickStart
+## 快速开始
+采用npm进行模块包管理
+```shell
+## 安装依赖
+npm install
+## 项目启动【开发环境】
+npm run dev
 
-<!-- add docs here for user -->
-
-see [egg docs][egg] for more detail.
-
-### Development
-
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
+## 项目启动【正式环境】
+npm run start
 ```
 
-### Deploy
+模板下载后，是整合了常用业务需求失效的Demo，可以直接运行起来。但为了更好的贴合自身项目需求，需要修改如下：
 
-```bash
-$ npm start
-$ npm stop
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
+- 项目名称
+- 
 
 
-[egg]: https://eggjs.org
+
+## 脚本指令
+
+
+
+## 项目部署
