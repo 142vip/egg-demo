@@ -3,7 +3,6 @@
 /**
  * 全局捕获异常，返回约定外的异常、异常，统一返回code：500
  */
-
 module.exports = () => {
   return async function errorHandler(ctx, next) {
     const { responseBodyMsg } = ctx.app.config;
@@ -16,9 +15,9 @@ module.exports = () => {
       // 从 error 对象上读出各个属性，设置到响应中
       if (responseBodyMsg[status]) {
         // 生产环境时 500 错误的详细错误内容不返回给客户端，因为可能包含敏感信息
-        ctx.body = ctx.helper.returnFormat(status, ctx.app.config.env === 'prod' ? responseBodyMsg[status] : err.message, false);
+        ctx.body = ctx.helper.returnFormat(false, ctx.app.config.env === 'prod' ? responseBodyMsg[status] : err.message, status);
       } else {
-        ctx.body = ctx.helper.returnFormat(110, '未知错误，建议邮件联系作者：fairyf@2925.com', false);
+        ctx.body = ctx.helper.returnFormat(false, '未知错误，建议邮件联系作者：fairyf@2925.com', 110);
       }
     }
   };

@@ -2,20 +2,22 @@
 
 const Controller = require('egg').Controller;
 const { name, version, description, author } = require('../../package.json');
+
+/**
+ * @Controller home测试模块
+ */
 class HomeController extends Controller {
   /**
-   * @router get /index  路径
-   * @summary 接口的小标题信息
-   * @description 接口的描述信息
-   * @request query integer id 对参数id的描述
-   * @request query string name 对参数name的描述
-   * @response 200 indexJsonBody
-   */
+     * @router get /index
+     * @summary 接口测试
+     * @description 项目基础接口测试
+     * @response 200 responseBody 响应失败
+     */
   async index() {
-    const { ctx, app } = this;
-    ctx.body = {
+    const { ctx } = this;
+    return ctx.helper.returnFormat({
       name, version, description, author,
-    };
+    });
   }
 
 }

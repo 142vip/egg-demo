@@ -9,8 +9,10 @@ module.exports = app => {
   const User = app.model.define('user', {
     id: {
       filed: 'id',
-      type: Sequelize.STRING(50),
+      type: Sequelize.BIGINT(10),
       primaryKey: true,
+      //  自增
+      autoIncrement: true,
       comment: '用户Id，主键',
     },
     account: {
