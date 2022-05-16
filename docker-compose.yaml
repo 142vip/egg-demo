@@ -3,17 +3,18 @@
 ##    - MySQL   端口映射 4000
 ##    - Redis   端口映射 3000
 ##    - MongoDB 端口映射 5000
+##    - RabbitMQ 端口映射 5672（管理端口） 15672（连接端口）
 ##
-version: '2'
+version: '3'
 services:
   ## mysql服务
   mysql_dev:
     image: mysql:5.7
     container_name: mysql_dev
-#    volumes:
-#      - service_env/mysql/log:/var/log/mysql
-#      - service_env/mysql/data:/var/lib/mysql
-#      - service_env/mysql/conf.d:/etc/mysql/conf.d
+    #    volumes:
+    #      - service_env/mysql/log:/var/log/mysql
+    #      - service_env/mysql/data:/var/lib/mysql
+    #      - service_env/mysql/conf.d:/etc/mysql/conf.d
     ports:
       - "4000:3306" #暴露mysql的端口
       # - "33060:33060"
@@ -49,8 +50,18 @@ services:
     ports:
       - 3000:6379
     hostname: redis_dev
-#    volumes:
-#      - service_env/redis/redis.conf:/usr/local/etc/redis/redis.conf
-#      - service_env/redis/data:/data
+    #    volumes:
+    #      - service_env/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    #      - service_env/redis/data:/data
     command:
       /bin/bash -c "redis-server /usr/local/etc/redis/redis.conf "
+  ## rabbitmq服务
+  rabbitmq_dev:
+    image: rabbitmq:management
+    container_name: rabbitmq_dev
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    ## 支持重启
+    restart: always
+    hostname: rabbitmq_dev

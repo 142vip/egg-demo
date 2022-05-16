@@ -4,10 +4,10 @@
  *  redis缓存封装,在egg-redis模块上进行分类操作扩展
  */
 
-const redisString = require('./string');
-const redisHash = require('./hash');
-const redisList = require('./list');
-const redisSet = require('./set');
+const redisString = require('./redis/string');
+const redisHash = require('./redis/hash');
+const redisList = require('./redis/list');
+const redisSet = require('./redis/set');
 
 
 /**
@@ -23,9 +23,9 @@ async function initRedis(redis) {
     _hash: new redisHash(redis),
     _set: new redisSet(redis),
   };
-  // 原来考虑是redis替换，后来觉得不妥，将自己封装的_redis和redis的两个对象聚合，是比较好的处理方式
-  // Object.assign()方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target)
-  // Object.assign()方法的第一个参数是目标对象，后面的参数都是源对象。
+    // 原来考虑是redis替换，后来觉得不妥，将自己封装的_redis和redis的两个对象聚合，是比较好的处理方式
+    // Object.assign()方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target)
+    // Object.assign()方法的第一个参数是目标对象，后面的参数都是源对象。
   return Object.assign(redis, _redis);
 }
 

@@ -8,20 +8,44 @@ const { Controller } = require('egg');
  *  2、  调用service逻辑
  *  3、  返回接口响应
  */
+
+/**
+ * @Controller user模块
+ */
 class UserController extends Controller {
   constructor() {
     super();
-    this.rule = {
-      name: 2112,
+    this.createRules = {
+      account: { required: true, type: 'string' },
+      password: { required: true, type: 'string' },
     };
   }
 
-  // 添加
+  /**
+     * @router post /api/vi/user
+     * @summary 添加用户
+     * @description 创建用户
+     * @request body createUserDto user 用户账号、密码
+     * @response 200 responseBody 响应失败
+     */
   async create() {
-    const { ctx } = this;
+    const { ctx, createRules } = this;
     // 参数校验
+    ctx.validate(createRules, ctx.request.body);
+    const { account, password } = ctx.request.body;
+    // 判断账号是否存在
+    const user = await ctx.service.user.findOneByAccount(account);
+    if (user) {
+      ctx.body = ctx.helper.returnFormat(200, '账号已存在', false);
+      return;
+    }
+    // 账号不存在，可以插入【注意密码要加密】
+    const result = await ctx.service.user.create({
+      account, password,
+    });
+    // 注意过滤不必要字段
+    return await ctx.helper.returnFormat(result, '操作成功', 200);
 
-    // 调用service
   }
 
   // 更新
@@ -35,10 +59,21 @@ class UserController extends Controller {
   // 查询单条数据
   async findOneByID() {
     const { ctx } = this;
+    ctx.validate({
+      id: { required: true, type: 'bigint' },
+    });
+    const { id } = ctx.query;
+    // 中间件封装了两种格式，注意区分
+    const result = await ctx.service.user.findOneByID(id);
+    return ctx.helper.returnFormat(result);
   }
 
   // 查询所有
-  async findAll() {}
+  async findAll() {
+    const { ctx } = this;
+    const result = await ctx.service.user.findAll();
+    return ctx.helper.returnFormat(result);
+  }
 }
 
 // 导出

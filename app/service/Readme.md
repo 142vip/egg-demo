@@ -7,5 +7,8 @@
  * @LastEditTime: 2020-09-23 23:33:55
 -->
 
-
 ## 目录用途
+
+基于MVC架构基础，service目录主要用来操作业务逻辑，可以是和数据库相关、也可以是细分逻辑，还可以是其他service
+
+请注意：egg框架下的service可以通过ctx.service.xxx相互调用；

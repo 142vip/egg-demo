@@ -7,10 +7,9 @@
  * @LastEditTime: 2020-09-23 23:35:20
  */
 
- 
 'use strict';
 
-module.exports={
+module.exports = {
   // 测试环境配置  和default配置文件进行合并
-}
+};
 

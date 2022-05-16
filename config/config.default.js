@@ -17,10 +17,8 @@ module.exports = appInfo => {
   const config = {};
   // 用户自定义配置，例如服务基础配置
   const userConfig = {};
-
   // cookie使用时候的key
   config.keys = appInfo.name + '_520_19980115';
-
   // 中间件配置
   config.middleware = [ 'errorHandler', 'responseHandler' ];
   // 全局统一错误处理
@@ -35,16 +33,14 @@ module.exports = appInfo => {
       '/public',
     ],
   };
-
-  // 正常情况下，接口返回数据封装
-  config.responseHandler = {
-    ignore: [
-      '/swagger*', // swagger相关
-      '/favicon*',
-      '/public',
-    ],
-  };
-
+  // // 正常情况下，接口返回数据封装
+  // config.responseHandler = {
+  //   ignore: [
+  //     '/swagger*', // swagger相关
+  //     '/favicon*',
+  //     '/public',
+  //   ],
+  // };
   // 配置静态资源目录
   config.static = {
     prefix: '/test',
@@ -52,7 +48,7 @@ module.exports = appInfo => {
 
   config.responseBodyMsg = {
     200: '请求成功',
-    400: '',
+    400: '客户端请求异常',
     401: '未授权',
     404: '资源不存在',
     422: '参数错误',
@@ -141,7 +137,7 @@ module.exports = appInfo => {
     securityDefinitions: {}, // 配置接口安全授权方式
     enableSecurity: false, // 是否启用授权，默认 false
     // enableValidate: true, // 是否启用参数校验，默认 true
-    routerMap: false, // 是否启用自动生成路由(实验功能)，默认 true
+    routerMap: true, // 是否启用自动生成路由(实验功能)，默认 true
     enable: true, // 默认 true
   };
 
