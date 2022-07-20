@@ -8,18 +8,21 @@ const { name, version, description, author } = require('../../package.json');
  */
 class HomeController extends Controller {
   /**
-     * @router get /index
-     * @summary 接口测试
-     * @description 项目基础接口测试
-     * @response 200 responseBody 响应失败
-     */
+   * @router get /index
+   * @summary 接口测试
+   * @description 项目基础接口测试
+   * @response 200 responseBody 响应失败
+   * @return {Promise<*>}
+   */
   async index() {
     const { ctx } = this;
     return ctx.helper.returnFormat({
-      name, version, description, author,
+      name,
+      version,
+      description,
+      author,
     });
   }
-
 }
 
 module.exports = HomeController;

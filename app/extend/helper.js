@@ -6,15 +6,12 @@
  * @LastEditors: 【B站&公众号】Rong姐姐好可爱
  * @LastEditTime: 2020-12-18 23:30:59
  */
-
-
 'use strict';
 
 /**
  * 扩展ctx.helper对象，此处定义的方法、变量， 可以通过ctx.helper.xx使用
  * 参考：https://www.eggjs.org/zh-CN/basics/extend
  */
-
 
 /**
  * 统一返回

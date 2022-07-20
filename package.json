@@ -24,7 +24,8 @@
     "egg-ci": "^1.11.0",
     "egg-mock": "^3.21.0",
     "eslint": "^5.16.0",
-    "eslint-config-egg": "^7.5.1"
+    "eslint-config-egg": "^7.5.1",
+    "prettier": "^2.7.1"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -48,6 +49,9 @@
     "type": "git",
     "url": ""
   },
-  "author": "[Github&公众号]:Rong姐姐好可爱",
+  "author": {
+    "name": "[Github&公众号]:Rong姐姐好可爱",
+    "email": "fairy_vip@2925.com"
+  },
   "license": "MIT"
 }

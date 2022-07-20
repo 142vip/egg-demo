@@ -5,7 +5,4 @@
  * 扩展ctx对象
  *
  */
-module.exports = {
-
-
-};
+module.exports = {};

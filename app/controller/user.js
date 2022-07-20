@@ -22,12 +22,12 @@ class UserController extends Controller {
   }
 
   /**
-     * @router post /api/vi/user
-     * @summary 添加用户
-     * @description 创建用户
-     * @request body createUserDto user 用户账号、密码
-     * @response 200 responseBody 响应失败
-     */
+   * @router post /api/vi/user
+   * @summary 添加用户
+   * @description 创建用户
+   * @request body createUserDto user 用户账号、密码
+   * @response 200 responseBody 响应失败
+   */
   async create() {
     const { ctx, createRules } = this;
     // 参数校验
@@ -41,14 +41,17 @@ class UserController extends Controller {
     }
     // 账号不存在，可以插入【注意密码要加密】
     const result = await ctx.service.user.create({
-      account, password,
+      account,
+      password,
     });
     // 注意过滤不必要字段
     return await ctx.helper.returnFormat(result, '操作成功', 200);
-
   }
 
-  // 更新
+  /**
+   *  更新
+   * @return {Promise<void>}
+   */
   async update() {
     const { ctx } = this;
     ctx.throw('xxx', 400);
@@ -56,7 +59,10 @@ class UserController extends Controller {
     // throw new Error(111);
   }
 
-  // 查询单条数据
+  /**
+   * 查询单条数据
+   * @return {Promise<*>}
+   */
   async findOneByID() {
     const { ctx } = this;
     ctx.validate({
@@ -68,7 +74,10 @@ class UserController extends Controller {
     return ctx.helper.returnFormat(result);
   }
 
-  // 查询所有
+  /**
+   * 查询所有
+   * @return {Promise<*>}
+   */
   async findAll() {
     const { ctx } = this;
     const result = await ctx.service.user.findAll();

@@ -21,16 +21,17 @@
  *  http-errors deprecated non-first-argument status code; replace with createError(699, ...) node_modules/koa/lib/context.js:97:11
  *  http-errors deprecated non-error status code; use only 4xx or 5xx status codes node_modules/koa/lib/context.js:97:11
  */
-
 module.exports = () => {
   return async function responseHandler(ctx, next) {
     // 执行业务，并返回结果
     const response = await next();
     ctx.logger.info(`responseHandler信息：${JSON.stringify(response)}`);
     // 对返回结果进行分类
-    if (typeof response === 'object' && Object.keys(response).includes('result')) {
+    if (
+      typeof response === 'object' &&
+      Object.keys(response).includes('result')
+    ) {
       ctx.body = response;
-      return;
     }
     // 其他部分，不做处理
   };

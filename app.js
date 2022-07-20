@@ -9,6 +9,7 @@
  */
 
 const initRedis = require('./app/cache/index');
+
 class AppBootHook {
   constructor(app) {
     this.app = app;
@@ -21,9 +22,8 @@ class AppBootHook {
     // 此时 config 文件已经被读取并合并，但是还并未生效
     // 这是应用层修改配置的最后时机
     // 注意：此函数只支持同步调用
-
-
   }
+
   async didLoad() {
     // 挂载redis 并扩展|增强 ctx.app对象上的redis
     const { app } = this;
@@ -36,14 +36,15 @@ class AppBootHook {
         force: false, // 数据库表不强制删除后重建
       });
     } catch (e) {
-      this.app.logger.error('----------- sequelize model and database sync failed ,please check your sequelize config  -----------');
+      this.app.logger.error(
+        '----------- sequelize model and database sync failed ,please check your sequelize config  -----------'
+      );
     }
   }
 
   async willReady() {
     // 所有的插件都已启动完毕，但是应用整体还未 ready
     // 可以做一些数据初始化等操作，这些操作成功才会启动应用
-
     // 例如：从数据库加载数据到内存缓存
   }
 
@@ -51,7 +52,11 @@ class AppBootHook {
     // 应用已经启动完毕
     const { logger, config, startTime } = this;
     const { hostname, port } = config.cluster.listen;
-    logger.info(`[egg-swagger-doc](${Date.now() - startTime}ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html JSON接口访问：http://${hostname}:${port}/swagger-doc 方便导出`);
+    logger.info(
+      `[egg-swagger-doc](${
+        Date.now() - startTime
+      }ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html JSON接口访问：http://${hostname}:${port}/swagger-doc 方便导出`
+    );
   }
 
   async serverDidReady() {

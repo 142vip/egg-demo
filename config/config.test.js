@@ -8,7 +8,6 @@
  */
 
 'use strict';
-
 module.exports = {
   // 测试环境配置  和default配置文件进行合并
 };

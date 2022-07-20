@@ -45,7 +45,6 @@ module.exports = appInfo => {
   config.static = {
     prefix: '/test',
   };
-
   config.responseBodyMsg = {
     200: '请求成功',
     400: '客户端请求异常',
@@ -55,7 +54,6 @@ module.exports = appInfo => {
     500: '内部服务异常',
     599: '返回为空',
   };
-
   // 定义项目启动端口
   config.cluster = {
     listen: {
@@ -106,7 +104,8 @@ module.exports = appInfo => {
   };
   // redis配置
   config.redis = {
-    client: { // instanceName. See below
+    client: {
+      // instanceName. See below
       port: 6379, // Redis port
       host: '127.0.0.1', // Redis host
       password: 'auth',
