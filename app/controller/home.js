@@ -2,6 +2,7 @@
 
 const Controller = require('egg').Controller;
 const { name, version, description, author } = require('../../package.json');
+const { returnFormat } = require('../utils');
 
 /**
  * @Controller home测试模块
@@ -16,7 +17,7 @@ class HomeController extends Controller {
    */
   async index() {
     const { ctx } = this;
-    return ctx.helper.returnFormat({
+    ctx.body = returnFormat({
       name,
       version,
       description,
