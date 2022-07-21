@@ -17,11 +17,9 @@
  *    - returnFormat(false,"操作失败")
  *    - returnFormat(false,"操作失败",200)
  */
-
 function returnFormat(result, message = '', code = 200) {
   return { result, message, code };
 }
-
 
 module.exports = {
   returnFormat,

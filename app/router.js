@@ -17,7 +17,6 @@ module.exports = app => {
   // 自定义路由
   router.get('/', controller.home.index);
   // 添加全局路由前缀 [可选，可用来更好的管理路由,但要注意swagger等静态资源的访问情况，可以答应router查看]
-
   if (config.env === 'prod') {
     router.prefix('/api/egg-demo');
     // console.log(router);
