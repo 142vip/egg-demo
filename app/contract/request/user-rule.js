@@ -1,11 +1,8 @@
 'use strict';
 
 // 用户添加
-const createUserDto = {
+exports.createUserRule = {
   account: { type: 'string', required: true },
   password: { type: 'string', required: true },
 };
 
-module.exports = {
-  createUserDto,
-};

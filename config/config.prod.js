@@ -8,7 +8,7 @@
  */
 
 'use strict';
-exports.responseBodyMsg = {
+exports.responseBodyMessage = {
   200: '请求成功',
   400: '客户端请求异常',
   401: '未授权',

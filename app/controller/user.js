@@ -1,6 +1,7 @@
 'use strict';
 
 const { Controller } = require('egg');
+const { dataResponse } = require('../common/utils');
 
 /**
  *  控制层，主要功能：
@@ -13,14 +14,6 @@ const { Controller } = require('egg');
  * @Controller user模块
  */
 class UserController extends Controller {
-  constructor(ctx) {
-    super(ctx);
-    this.createRules = {
-      account: { required: true, type: 'string' },
-      password: { required: true, type: 'string' },
-    };
-  }
-
   /**
    * @router post /api/v1/user
    * @summary 添加用户
@@ -29,9 +22,9 @@ class UserController extends Controller {
    * @response 200 responseBody 响应响应成功
    */
   async create() {
-    const { ctx, createRules } = this;
+    const { ctx } = this;
     // 参数校验
-    ctx.validate(createRules, ctx.request.body);
+    ctx.validate(ctx.rule.createUserRule, ctx.request.body);
     const { account, password } = ctx.request.body;
     // 判断账号是否存在
     const user = await ctx.service.user.findOneByAccount(account);
@@ -69,16 +62,18 @@ class UserController extends Controller {
     const { id } = ctx.query;
     // 中间件封装了两种格式，注意区分
     const result = await ctx.service.user.findOneByID(id);
-    return ctx.helper.returnFormat(result);
+    ctx.body = dataResponse.returnFormat(result);
   }
 
   /**
    * 查询所有
+   * @router post /api/v1/user/list
+   * @summary 查询所有用户信息
+   * @response 200
    */
-  async findAll() {
+  async findUserList() {
     const { ctx } = this;
-    const result = await ctx.service.user.findAll();
-    return ctx.helper.returnFormat(result);
+    ctx.body = dataResponse.returnFormat([]);
   }
 }
 

@@ -94,5 +94,5 @@ exports.responseMessage = {
 exports.responseHeader = {
   'x-author-github': 'https://github.com/142vip',
   'x-author-wechat': 'FairyRong0115',
-  'x-author-email': 'fairy_vip@2925.com',
+  'x-author-email': 'fairy_demo@2925.com',
 };
