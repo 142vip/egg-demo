@@ -8,6 +8,7 @@ const { dataResponse } = require('../common/utils');
  *  1、  确定参数，进行参数校验和转换
  *  2、  调用service逻辑
  *  3、  返回接口响应
+ *
  */
 
 /**
@@ -15,40 +16,43 @@ const { dataResponse } = require('../common/utils');
  */
 class UserController extends Controller {
   /**
+   * 添加用户
    * @router post /api/v1/user
    * @summary 添加用户
-   * @description 创建用户
-   * @request body createUserDto user 用户账号、密码
-   * @response 200 responseBody 响应响应成功
+   * @description 添加用户
+   * @request body createUserRule
+   * @response 200
    */
-  async create() {
+  async createUser() {
     const { ctx } = this;
     // 参数校验
     ctx.validate(ctx.rule.createUserRule, ctx.request.body);
     const { account, password } = ctx.request.body;
+    const { user: userService } = ctx.service;
     // 判断账号是否存在
-    const user = await ctx.service.user.findOneByAccount(account);
-    if (user) {
-      ctx.body = ctx.helper.returnFormat(200, '账号已存在', false);
+    const user = await userService.findOneByAccount(account);
+    if (user != null) {
+      ctx.body = dataResponse.returnFormat(200, '账号已存在', false);
       return;
     }
     // 账号不存在，可以插入【注意密码要加密】
-    const result = await ctx.service.user.create({
+    const result = await userService.create({
       account,
       password,
     });
     // 注意过滤不必要字段
-    return await ctx.helper.returnFormat(result, '操作成功', 200);
+    ctx.body = dataResponse.returnFormat(result);
   }
 
   /**
-   *  更新
+   * 更新用户信息
+   * @router post /api/v1/user/info
+   * @summary 更新用户信息
+   * @response 200
    */
-  async update() {
+  async 'post /api/v1/user/info'() {
     const { ctx } = this;
     ctx.throw('xxx', 400);
-    // throw new HttpException('当前子用户名已存在', 200);
-    // throw new Error(111);
   }
 
   /**

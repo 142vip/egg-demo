@@ -1,6 +1,8 @@
 'use strict';
 
-class dataResponse {
+class DataResponse {
+
+
   /**
    * 统一返回
    * @param result  响应结果 Array|Object|boolean
@@ -25,4 +27,4 @@ class dataResponse {
   }
 }
 
-module.exports = dataResponse;
+module.exports = DataResponse;

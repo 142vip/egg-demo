@@ -48,11 +48,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/142vip/egg-demo"
   },
   "author": {
     "name": "[Github&公众号]:Rong姐姐好可爱",
-    "email": "fairy_vip@2925.com"
+    "email": "fairy_demo@2925.com"
   },
   "license": "MIT"
 }

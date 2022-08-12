@@ -8,7 +8,6 @@ const redisString = require('./redis-string');
 const redisHash = require('./redis-hash');
 const redisList = require('./redis-list');
 const redisSet = require('./redis-set');
-const redisName = Symbol('redis-cache#init');
 
 /**
  *
@@ -28,10 +27,7 @@ async function initRedis(redis) {
   // Object.assign()方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target)
   // Object.assign()方法的第一个参数是目标对象，后面的参数都是源对象。
 
-  if (this[redisName] != null) {
-    this[redisName] = Object.assign({}, redis, _redis);
-  }
-  return this[redisName];
+  return Object.assign({}, redis, _redis);
 }
 
 module.exports = initRedis;
