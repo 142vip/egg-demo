@@ -13,5 +13,6 @@ function getSingleton(classFile) {
   return this[classFile.name];
 }
 
+exports.getSingleton = getSingleton;
 exports.dataResponse = getSingleton(DataResponse);
 exports.constants = require('./constants');
