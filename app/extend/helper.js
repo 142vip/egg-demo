@@ -1,3 +1,4 @@
+'use strict';
 /*
  * @Description: 封装常用工具方法
  * @Version: Beta1.0
@@ -6,7 +7,6 @@
  * @LastEditors: 【B站&公众号】Rong姐姐好可爱
  * @LastEditTime: 2020-12-18 23:30:59
  */
-'use strict';
 
 /**
  * 扩展ctx.helper对象，此处定义的方法、变量， 可以通过ctx.helper.xx使用
@@ -18,7 +18,6 @@
  * @param result  响应结果 Array|Object|boolean
  * @param message 响应信息
  * @param code  响应状态码
- * @return {{result, code: number, message: string}}
  * 调佣示例：
  *    - returnFormat(false)
  *    - returnFormat(false,"操作失败")

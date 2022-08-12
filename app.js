@@ -8,7 +8,7 @@
  * @LastEditTime: 2020-10-08 21:40:19
  */
 
-const initRedis = require('./app/cache/index');
+const initRedis = require('./app/common/redis-cache/index');
 
 class AppBootHook {
   constructor(app) {

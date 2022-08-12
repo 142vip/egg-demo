@@ -9,13 +9,14 @@
  * - 对待查询，可以采用路由params传参,也非常推荐query、body来传参
  *
  */
-const userRouter = require('./routers/user');
+
+// const userRouter = require('./routers/user');
 module.exports = app => {
-  const { router, controller, config } = app;
-  // 模块路由
-  userRouter(app);
-  // 自定义路由
-  router.get('/', controller.home.index);
+  const { router, config } = app;
+  // 模块路由 【无特殊中间件，可通过swagger插件自动注册路由】
+  // userRouter(app);
+
+
   // 添加全局路由前缀 [可选，可用来更好的管理路由,但要注意swagger等静态资源的访问情况，可以答应router查看]
   if (config.env === 'prod') {
     router.prefix('/api/egg-demo');
