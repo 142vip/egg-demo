@@ -1,11 +1,11 @@
 'use strict';
-
 /**
  * 简单用户表，用来参考数据库查询操作
  */
 const Sequelize = require('sequelize');
-module.exports = app => {
-  const User = app.model.define(
+
+module.exports = app =>
+  app.model.define(
     'user',
     {
       id: {
@@ -32,6 +32,7 @@ module.exports = app => {
         filed: 'create_time',
         type: Sequelize.BIGINT(13),
         allowNull: false,
+        defaultValue: () => new Date().getTime(),
         comment: '创建时间',
       },
       update_time: {
@@ -57,5 +58,3 @@ module.exports = app => {
       timestamps: false,
     }
   );
-  return User;
-};

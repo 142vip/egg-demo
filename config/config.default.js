@@ -1,3 +1,4 @@
+'use strict';
 /*
  * @Description: 开发环境下的配置文件
  * @Version: Beata1.0
@@ -7,8 +8,7 @@
  * @LastEditTime: 2020-09-23 23:34:43
  */
 
-'use strict';
-
+const { swaggerRouterIgnore } = require('../app/common/utils/constants');
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -26,31 +26,16 @@ module.exports = appInfo => {
       '/api/v1/randomVerifyCode',
       '/api/v1/oauth2/authorize',
       '/api/v1/oauth2/token',
-      '/swagger*', // swagger相关
-      '/favicon*',
-      '/public',
+      ...swaggerRouterIgnore,
     ],
   };
-  // // 正常情况下，接口返回数据封装
-  // config.responseHandler = {
-  //   ignore: [
-  //     '/swagger*', // swagger相关
-  //     '/favicon*',
-  //     '/public',
-  //   ],
-  // };
+  // 正常情况下，接口返回数据封装
+  config.responseHandler = {
+    ignore: [ ...swaggerRouterIgnore ],
+  };
   // 配置静态资源目录
   config.static = {
     prefix: '/test',
-  };
-  config.responseBodyMsg = {
-    200: '请求成功',
-    400: '客户端请求异常',
-    401: '未授权',
-    404: '资源不存在',
-    422: '参数错误',
-    500: '内部服务异常',
-    599: '返回为空',
   };
   // 定义项目启动端口
   config.cluster = {

@@ -1,14 +1,11 @@
 <!--
  * @Description: 介绍routers目录用途
  * @Version: Beata1.0
- * @Autor: 【B站&公众号】Rong姐姐好可爱
+ * @Author: 【B站&公众号】Rong姐姐好可爱
  * @Date: 2020-09-23 23:32:58
  * @LastEditors: 【B站&公众号】Rong姐姐好可爱
  * @LastEditTime: 2020-09-23 23:33:26
 -->
-
-
-
 
 ## 目录用途
 
@@ -28,6 +25,11 @@
 ```
 
 建议：
+
 - 路由采用小写，遵守下划线小驼峰等
 - 路有里面最好不要直接指明功能，例如：createAccount
 - 避免接口见名知意，导致公网被恶意请求
+
+### 采用swagger自动注册路由
+
+结合egg-swagger-docs插件，自动注册路由，可用于通用路由注册【中间使用中间件的，可自行手动注册】

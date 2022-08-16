@@ -1,17 +1,19 @@
 'use strict';
+/**
+ * 处理业务，常用来操作数据库
+ */
 
 const { Service } = require('egg');
 
 /**
- * 处理业务，常用来操作数据库
+ * @typedef {Object} UserService
  */
 class UserService extends Service {
   /**
    * 创建用户
    * @param user
-   * @return {Promise<user>}
    */
-  async create(user) {
+  async createUser(user) {
     const { ctx } = this;
     // 添加创建时间
     user.create_time = Date.now();
@@ -21,9 +23,8 @@ class UserService extends Service {
   /**
    * 根据用户ID更新信息
    * @param user
-   * @return {Promise<*>}
    */
-  async updateById(user) {
+  async updateUserById(user) {
     const { ctx } = this;
     // 更新修改时间
     user.update_time = Date.now();
@@ -36,10 +37,9 @@ class UserService extends Service {
   }
 
   /**
-   * 查询
-   * @return {Promise<*>}
+   * 查询所有用户列表
    */
-  async findAll() {
+  async findUserList() {
     const { ctx } = this;
     return ctx.model.User.findAll();
   }
@@ -47,12 +47,21 @@ class UserService extends Service {
   /**
    * 根据账号，查找用户信息
    * @param account
-   * @return {Promise<any|Model|null>}
    */
-  async findOneByAccount(account) {
+  async findUserByUserAccount(account) {
     const { ctx } = this;
-    return await ctx.model.user.findOne({
+    return await ctx.model.User.findOne({
       where: { account },
+    });
+  }
+
+  /**
+   * 根据id，查询用户信息
+   */
+  async findUserById(id) {
+    const { ctx } = this;
+    return await ctx.model.User.findOne({
+      where: { id },
     });
   }
 }
