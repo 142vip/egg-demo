@@ -1,3 +1,4 @@
+'use strict';
 /*
  * @Description: 正式环境下的配置文件
  * @Version: Beata1.0
@@ -7,7 +8,6 @@
  * @LastEditTime: 2020-09-23 23:34:43
  */
 
-'use strict';
 exports.responseBodyMessage = {
   200: '请求成功',
   400: '客户端请求异常',

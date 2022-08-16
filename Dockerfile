@@ -9,10 +9,9 @@
 ## 自定义镜像：registry.cn-hangzhou.aliyuncs.com/142vip/node:12.6.0-alpine
 FROM node:latest
 # 标签
-LABEL version="Beta1.0"
-LABEL description="基于egg框架实现demo项目模板"
+LABEL version="Beta1.0" description="基于egg框架实现demo项目模板"
 # 作者
-MAINTAINER Rong姐姐好可爱 <fairy_vip@2925.com>
+MAINTAINER Rong姐姐好可爱 <fairy_demo@2925.com>
 # 创建项目空间
 RUN mkdir -p /apps
 # 将当前代码文件复制到工作区域

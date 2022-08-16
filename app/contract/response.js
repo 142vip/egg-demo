@@ -8,13 +8,8 @@
  *
  */
 
-
-const responseBody = {
+exports.responseBody = {
   code: { type: 'number', required: true, example: 200 },
   message: { type: 'string', required: true, example: '请求成功' },
   result: { type: 'boolean', required: true, example: 'false | true' },
-};
-
-module.exports = {
-  responseBody,
 };

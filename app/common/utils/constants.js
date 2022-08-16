@@ -65,6 +65,12 @@ exports.githubCommitList = [
   },
 ];
 
+// swagger 路由白名单
+exports.swaggerRouterIgnore = [
+  '/swagger*', // swagger相关
+  '/favicon*',
+  '/public',
+];
 /**
  * 全局统一错误处理；
  * code值说明

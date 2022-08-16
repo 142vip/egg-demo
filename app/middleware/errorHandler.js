@@ -9,6 +9,12 @@ const { responseBodyMessage } = require('../../config/config.prod');
 module.exports = () => {
   return async function errorHandler(ctx, next) {
     try {
+      ctx.logger.info(
+        `请求参数：${JSON.stringify({
+          query: ctx.query,
+          body: ctx.request.body,
+        })}`
+      );
       await next();
     } catch (err) {
       ctx.logger.warn(err);
@@ -17,7 +23,7 @@ module.exports = () => {
         ctx.app.config.env === 'prod'
           ? responseBodyMessage[status]
           : err.message;
-      if (responseBodyMessage[status]) {
+      if (responseBodyMessage[status] != null) {
         // 生产环境时 500 错误的详细错误内容不返回给客户端，因为可能包含敏感信息
         ctx.body = dataResponse.returnFormat(false, errorMessage, status);
       } else {
@@ -29,7 +35,7 @@ module.exports = () => {
       }
     } finally {
       ctx.status = 200;
-      ctx.setHeader(responseHeader);
+      ctx.set(responseHeader);
     }
   };
 };

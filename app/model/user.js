@@ -1,9 +1,9 @@
 'use strict';
-
 /**
  * 简单用户表，用来参考数据库查询操作
  */
 const Sequelize = require('sequelize');
+
 module.exports = app =>
   app.model.define(
     'user',
