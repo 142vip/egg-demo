@@ -5,3 +5,4 @@ node_module
 typings
 
 /node_modules/
+/run/

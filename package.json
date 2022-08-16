@@ -1,6 +1,6 @@
 {
   "name": "egg-demo",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "description": "egg框架的基础项目结构代码示例",
   "private": true,
   "egg": {
