@@ -27,7 +27,7 @@ class UserService extends Service {
   async updateUserById(user) {
     const { ctx } = this;
     // 更新修改时间
-    user.update_time = Date.now();
+    user.update_time = new Date().getTime();
 
     return ctx.model.User.update(user, {
       where: {

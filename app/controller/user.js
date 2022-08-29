@@ -8,7 +8,6 @@ const { dataResponse } = require('../common/utils');
  *  1、  确定参数，进行参数校验和转换
  *  2、  调用service逻辑
  *  3、  返回接口响应
- *
  */
 
 /**
@@ -30,7 +29,6 @@ class UserController extends Controller {
    */
   async 'post /api/v1/user'() {
     const { ctx, userService } = this;
-    // 参数校验
     ctx.validate(ctx.rule.createUserRule, ctx.request.body);
     const { account, password } = ctx.request.body;
     // 判断账号是否存在
@@ -58,7 +56,6 @@ class UserController extends Controller {
     const { ctx } = this;
     ctx.validate(ctx.rule.updateUserRule, ctx.request.body);
     const requestBody = ctx.request.body;
-
     await this.userService.updateUserById(requestBody);
     // 抛出异常
     dataResponse.throwFormat(400, '更新失败');

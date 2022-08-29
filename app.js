@@ -15,7 +15,7 @@ class AppBootHook {
     this.app = app;
     this.logger = app.logger;
     this.config = app.config;
-    this.startTime = Date.now();
+    this.startTime = new Date().getTime();
   }
 
   configWillLoad() {
@@ -54,14 +54,13 @@ class AppBootHook {
     const { hostname, port } = config.cluster.listen;
     logger.info(
       `[egg-swagger-doc](${
-        Date.now() - startTime
+        new Date().getTime() - startTime
       }ms) 接口文档请访问：http://${hostname}:${port}/swagger-ui.html JSON接口访问：http://${hostname}:${port}/swagger-doc 方便导出`
     );
   }
 
   async serverDidReady() {
-    // http / https server 已启动，开始接受外部请求
-    // 此时可以从 app.server 拿到 server 的实例
+    // http / https server 已启动，开始接受外部请求,此时可以从 app.server 拿到 server 的实例
   }
 }
 

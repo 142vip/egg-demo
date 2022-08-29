@@ -2,7 +2,7 @@
 /**
  * 简单用户表，用来参考数据库查询操作
  */
-const Sequelize = require('sequelize');
+const { BIGINT, STRING } = require('sequelize');
 
 module.exports = app =>
   app.model.define(
@@ -10,7 +10,7 @@ module.exports = app =>
     {
       id: {
         filed: 'id',
-        type: Sequelize.BIGINT(10),
+        type: BIGINT(10),
         primaryKey: true,
         //  自增
         autoIncrement: true,
@@ -18,33 +18,33 @@ module.exports = app =>
       },
       account: {
         filed: 'account',
-        type: Sequelize.STRING(20),
+        type: STRING(20),
         allowNull: false,
         comment: '用户账号',
       },
       password: {
         filed: 'password',
-        type: Sequelize.STRING(255),
+        type: STRING(255),
         allowNull: false,
         comment: '用户密码',
       },
       create_time: {
         filed: 'create_time',
-        type: Sequelize.BIGINT(13),
+        type: BIGINT(13),
         allowNull: false,
         defaultValue: () => new Date().getTime(),
         comment: '创建时间',
       },
       update_time: {
         filed: 'update_time',
-        type: Sequelize.BIGINT(13),
+        type: BIGINT(13),
         allowNull: false,
         defaultValue: 0,
         comment: '修改时间',
       },
       delete_time: {
         filed: 'delete_time',
-        type: Sequelize.BIGINT(13),
+        type: BIGINT(13),
         allowNull: false,
         defaultValue: 0,
         comment: '删除时间',
